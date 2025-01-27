@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Geo Alert App</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <header>
+    <h1>Geo Alert App</h1>
+    <p>Get alerts when you reach specific locations!</p>
+  </header>
+
+  <main>
+    <div class="card">
+      <h2>Set Alert</h2>
+      <form id="alert-form">
+        <div class="form-group">
+          <label for="latitude">Latitude:</label>
+          <input type="text" id="latitude" placeholder="Enter latitude (e.g., 40.7128)" required>
+        </div>
+        <div class="form-group">
+          <label for="longitude">Longitude:</label>
+          <input type="text" id="longitude" placeholder="Enter longitude (e.g., -74.0060)" required>
+        </div>
+        <div class="form-group">
+          <label for="alert-message">Alert Message:</label>
+          <textarea id="alert-message" placeholder="Enter your custom alert message" required></textarea>
+        </div>
+        <div class="form-group">
+          <label for="alert-tone">Set Alert Tone:</label>
+         <input type="file" id="alert-tone" accept="audio/*">
+
+          <p id="tone-name"></p>
+        </div>
+        <div class="form-group">
+          <label for="alert-type">Alert Type:</label>
+          <select id="alert-type">
+            <option value="audio">Audio</option>
+            <option value="vibration">Vibration</option>
+            <option value="both">Both</option>
+          </select>
+        </div>
+        <button type="submit">Add Alert</button>
+      </form>
+    </div>
+
+    <div id="map"></div>
+
+    <div id="alerts-list">
+      <h3>Your Alerts</h3>
+      <ul id="alerts-container"></ul>
+    </div>
+
+    <div class="dark-mode-toggle">
+      <button id="dark-mode-toggle">Toggle Dark Mode</button>
+    </div>
+  </main>
+
+  <footer>&copy; 2024 Geo Alert App</footer>
+
+  <script src="script/script.js"></script>
+  <script src="https://maps.googleapis.com/maps/api/js?key=ADD_YOUR_MAP_API=initMap" async defer></script>
+</body>
+</html>
